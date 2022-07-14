@@ -1,8 +1,10 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
-
+const cors = require("cors");
 const app = express();
+
+app.use(cors());
 
 app.use("/", async (req, res) => {
   res.setHeader("Content-Type", "application/json");
@@ -29,4 +31,3 @@ app.listen(5000, () => {
 
 // Export the Express API
 module.exports = app;
-
